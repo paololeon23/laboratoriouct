@@ -1,0 +1,281 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Alineación centrada */
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Contenedor principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center; /* Alineamos todo al centro */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Nav Bar */
+nav {
+    width: 100%;
+    background-color: #150957;
+    padding: 15px;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+}
+
+nav img {
+    width: 160px; /* Ajusta el tamaño del logo */
+}
+
+.ttt {
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.ttt span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Header */
+header {
+    text-align: center;  /* Centra el texto */
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    width: 100%;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #150957;
+    margin-bottom: 20px; /* Añadir espacio entre el título y los párrafos */
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    max-width: 800px; /* Añadir un límite al ancho para evitar texto muy largo */
+    line-height: 1.6; /* Mejora la legibilidad */
+}
+
+/* Botones */
+.buttons {
+    display: flex;
+    justify-content: center;  /* Centra los botones */
+    gap: 30px; /* Aumenta el espacio entre los botones */
+    margin-bottom: 40px;
+    width: 100%;
+    padding: 0 20px;
+}
+
+button {
+    background-color: rgb(255, 206, 61);
+    color: #150957;
+    padding: 12px 25px; /* Aumenta el padding para más espacio */
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 200px; /* Botones más pequeños y centrados */
+}
+
+button:hover {
+    background-color: rgb(255, 180, 40);
+}
+
+/* Noticias */
+.news {
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.news h2 {
+    text-align: center;  /* Centra el título de la sección */
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center; /* Centra las tarjetas */
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 30%;
+    margin-bottom: 20px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card h3 {
+    font-size: 1.0rem;
+    color: #150957;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #555;
+    text-align: justify;  /* Justifica el texto dentro del card */
+}
+
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #150957;
+    color: white;
+    padding: 28px 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Centra todo en el footer */
+    text-align: center;
+}
+
+.footer-info {
+    width: 100%;
+    max-width: 1100px;
+}
+
+.footer-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.footer-info p {
+    font-size: 1.1rem;
+}
+
+/* Responsividad */
+@media screen and (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .card {
+        width: 80%;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    button {
+        padding: 15px;
+        font-size: 1.2rem;
+        width: 100%; /* Los botones ocupan todo el ancho */
+    }
+
+    .footer-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .footer-info p {
+        font-size: 1rem;
+    }
+
+    .social-icons {
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header p {
+        font-size: 1rem;
+        margin: 13px 20px 0px 20px;
+    }
+
+    .buttons button {
+        width: 100%;
+        padding: 15px;
+        font-size: 1.2rem;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    .footer-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .footer-info p {
+        font-size: 1rem;
+    }
+
+    .social-icons {
+        gap: 10px;
+    }
+}
+
+/* Estilos para la imagen flotante */
+.floating-img {
+    position: fixed; /* Lo fija en una posición específica */
+    bottom: 0px;    /* Lo posiciona 20px por encima del borde inferior */
+    right: 0px;     /* Lo posiciona 20px desde el borde derecho */
+    width: 260px;    /* Ajusta el tamaño inicial de la imagen */
+    height: auto;    /* Mantiene la proporción de la imagen */
+    z-index: 1000;   /* Asegura que esté por encima de otros elementos */
+}
+
+/* Media query para hacerlo responsive */
+@media (max-width: 768px) {
+    .floating-img {
+        width: 50%;  /* Reduce el tamaño en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-img {
+        width: 50%;  /* Reduce aún más el tamaño en pantallas muy pequeñas */
+    }
+}
