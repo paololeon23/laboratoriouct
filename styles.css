@@ -206,9 +206,9 @@ footer {
     }
 
     button {
-        padding: 15px;
-        font-size: 1.2rem;
-        width: 100%; /* Los botones ocupan todo el ancho */
+        padding: 10px;
+        font-size: 1.0rem;
+        width: 35%; /* Los botones ocupan todo el ancho */
     }
 
     .footer-info h2 {
