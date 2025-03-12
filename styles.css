@@ -262,7 +262,7 @@ footer {
     position: fixed; /* Lo fija en una posición específica */
     bottom: 0px;    /* Lo posiciona 20px por encima del borde inferior */
     right: 0px;     /* Lo posiciona 20px desde el borde derecho */
-    width: 260px;    /* Ajusta el tamaño inicial de la imagen */
+    width: 110px;    /* Ajusta el tamaño inicial de la imagen */
     height: auto;    /* Mantiene la proporción de la imagen */
     z-index: 1000;   /* Asegura que esté por encima de otros elementos */
 }
@@ -276,6 +276,6 @@ footer {
 
 @media (max-width: 480px) {
     .floating-img {
-        width: 50%;  /* Reduce aún más el tamaño en pantallas muy pequeñas */
+        width: 22%;  /* Reduce aún más el tamaño en pantallas muy pequeñas */
     }
 }
