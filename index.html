@@ -1,72 +1,170 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laboratorio UCT</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- Para los íconos de Material -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> <!-- Para el icono de Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/icofont/1.0.0/icofont.min.css" rel="stylesheet"> <!-- Para los iconos adicionales -->
-</head>
-<body>
-    <div class="container">
-        <!-- Nav Bar -->
-        <nav>
-            <img src="1kMwMhw.png" style="width: 200px;" class="logo-display" alt="thumb">
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Laboratorio UCT</title>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- Para los íconos de Material -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> <!-- Para el icono de Font Awesome -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/icofont/1.0.0/icofont.min.css" rel="stylesheet"> <!-- Para los iconos adicionales -->
+    </head>
+    <body>
+        <div class="container">
+            <!-- Nav Bar -->
+            <nav>
+                <img src="1kMwMhw.png" style="width: 200px;" class="logo-display" alt="thumb">
 
-        </nav>
+            </nav>
 
-        <header>
-            <h1>Bienvenid@s estimados alumnos de la UCT</h1>
-            <p style="font-weight: bold;">Listo para navegar y seguir con los protocolos y manuales.</p>    
-            <p>Es importante que, al ingresar a un laboratorio, se lea cuidadosamente el protocolo y manual correspondiente. De esta manera, podrán llevar a cabo sus clases de forma ordenada, segura y eficiente. Asegúrese de seguir todas las indicaciones para un aprendizaje exitoso.</p>
-        </header>
+            <header>
+                <h1>Bienvenid@s estimados alumnos de la UCT</h1>
+                <p style="font-weight: bold;">Listo para navegar y seguir con los protocolos y manuales.</p>    
+                <p>Es importante que, al ingresar a un laboratorio, se lea cuidadosamente el protocolo y manual correspondiente. De esta manera, podrán llevar a cabo sus clases de forma ordenada, segura y eficiente. Asegúrese de seguir todas las indicaciones para un aprendizaje exitoso.</p>
+            </header>
 
-        <div class="buttons">
-            <button id="protocolo-btn">Protocolo Normal</button>
-            <button id="manual-btn">Manual General de Laboratorio</button>
+            <div class="buttons">
+                <button id="protocolo-btn">Protocolo Normal</button>
+                <button id="manual-btn">Manual General de Laboratorio</button>
+            </div>
+
+            <section class="news">
+                <h2>Noticias del Laboratorio UCT</h2>
+                <div class="card-container">
+                    <div class="card">
+                        <h3>UCT Gana Medalla de Oro en Feria Internacional de Inventos de Mujeres en Corea del Sur</h3>
+                        <img src="IMAGEN1.webp" alt="Feria de Inventos" loading="lazy">
+                        <p>La Universidad Católica de Trujillo se lleva la medalla de oro en una competencia internacional en la ciencia.</p>
+                        <button data-url="https://uct.edu.pe/uct-gana-medalla-de-oro-en-feria-internacional-de-inventos-de-mujeres-de-corea-del-sur-kiwie/">
+                            Ver más
+                        </button>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Laboratorios para Ingenieros</h3>
+                        <img src="PDF/INDUSTRIAL.jpg" alt="Laboratorio Industrial" loading="lazy">
+                        <p>El laboratorio está especializado en brindar recursos y tecnologías avanzadas para ingenieros que buscan innovar y desarrollar sus proyectos de manera eficiente.</p>
+                        <button data-url="https://admision.uct.edu.pe/carreras-pregrado">
+                            Ver más
+                        </button>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Laboratorios para Ciencias de la Salud</h3>
+                        <img src="PDF/MINAS.jpg" alt="Uso de Equipos" loading="lazy">
+                        <p>El laboratorio está dispuesto para cubrir las necesidades de las áreas de Ciencias de la Salud, con equipos apoyar el desarrollo de investigaciones y prácticas profesionales.</p>
+                        <button data-url="https://admision.uct.edu.pe/carreras-pregrado">
+                            Ver más
+                        </button>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Modal -->
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <iframe id="modal-iframe" width="100%" height="500px" frameborder="0" style="height: 94%;"></iframe>
+                </div>
+            </div>
+            
+            <script>
+                // Event Delegation para manejar los clics en los botones
+                document.addEventListener('click', function(event) {
+                    if (event.target.matches('button[data-url]')) {
+                        openModal(event.target.getAttribute('data-url'));
+                    }
+                });
+            
+                // Función para abrir el modal
+                function openModal(url) {
+                    document.getElementById('modal-iframe').src = url;
+                    document.getElementById('myModal').style.display = 'block';
+                }
+            
+                // Función para cerrar el modal
+                document.querySelector('.close').addEventListener('click', closeModal);
+                function closeModal() {
+                    document.getElementById('myModal').style.display = 'none';
+                    document.getElementById('modal-iframe').src = '';
+                }
+            </script>
+            
+            <style>
+                .modal {
+                    display: none;
+                    position: fixed;
+                    z-index: 1;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.4);
+                }
+            
+                .modal-content {
+                    background-color: #fefefe;
+                    margin: 5% auto;
+                    padding: 3px;
+                    border: 1px solid #888;
+                    width: 96%;
+                    height: 90%;
+                    margin-top: 40px;
+                }
+            
+                .close {
+                    color: #aaa;
+                    float: right;
+                    font-size: 28px;
+                    font-weight: bold;
+                    cursor: pointer;
+                }
+            
+                .close:hover {
+                    color: black;
+                }
+            
+                .card-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                }
+            
+                .card {
+                    flex: 1 1 calc(33.333% - 40px);
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    padding: 20px;
+                    border-radius: 8px;
+                    background-color: #fff;
+                }
+            
+                .card img {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 8px;
+                }
+            
+                .card button {
+                    display: block;
+                    margin: 10px auto 0;
+                    padding: 10px 20px;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+
+            </style>
+
+            <img src="uctt.png" alt="Imagen flotante" class="floating-img">
+
+            <footer>
+                <div class="footer-info">
+                    <p>© Copyright 2025 Universidad Católica de Trujillo</p>
+                </div>
+            </footer>
         </div>
 
-        <section class="news">
-            <h2>Noticias del Laboratorio UCT</h2>
-            <div class="card-container">
-                <div class="card">
-                    <h3>UCT Gana Medalla de Oro en Feria Internacional de Inventos de Mujeres en Corea del Sur</h3>
-                    <img src="IMAGEN1.webp" alt="Feria de Inventos">
-                    <p>La Universidad Católica de Trujillo se lleva la medalla de oro en una competencia internacional en la ciencia.</p>
-                    <a href="https://uct.edu.pe/uct-gana-medalla-de-oro-en-feria-internacional-de-inventos-de-mujeres-de-corea-del-sur-kiwie/" target="_blank" style="display: flex; justify-content: center; margin-top: 10px;">
-                        <button>Ver más</button>
-                    </a>
-                </div>
-                <div class="card">
-                    <h3>Laboratorios para Ingenieros</h3>
-                    <img src="PDF/INDUSTRIAL.jpg" alt="Laboratorio Industrial">
-                    <p>El laboratorio está especializado en brindar recursos y tecnologías avanzadas para ingenieros que buscan innovar y desarrollar sus proyectos de manera eficiente.</p>
-                    <a href="https://uct.edu.pe/uct-gana-medalla-de-oro-en-feria-internacional-de-inventos-de-mujeres-de-corea-del-sur-kiwie/" target="_blank" style="display: flex; justify-content: center; margin-top: 10px;">
-                        <button>Ver más</button>
-                    </a>
-                </div>
-                <div class="card">
-                    <h3>Laboratorios para Ciencias de la Salud</h3>
-                    <img src="PDF/MINAS.jpg" alt="Uso de Equipos">
-                    <p>El laboratorio está dispuesto para cubrir las necesidades de las áreas de Ciencias de la Salud, con equipos apoyar el desarrollo de investigaciones y prácticas profesionales.</p>
-                    <a href="https://uct.edu.pe/uct-gana-medalla-de-oro-en-feria-internacional-de-inventos-de-mujeres-de-corea-del-sur-kiwie/" target="_blank" style="display: flex; justify-content: center; margin-top: 10px;">
-                        <button>Ver más</button>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <img src="uctt.png" alt="Imagen flotante" class="floating-img">
-
-        <footer>
-            <div class="footer-info">
-                <p>© Copyright 2025 Universidad Católica de Trujillo</p>
-            </div>
-        </footer>
-    </div>
-
-    <script src="script.js"></script>
-</body>
-</html>
+        <script src="script.js"></script>
+    </body>
+    </html>
